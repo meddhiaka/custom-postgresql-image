@@ -1,0 +1,18 @@
+version: '2.27.0'
+
+services:
+  postgres-custom-x:
+    image: postgres:alpine3.20
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: meddhiaka
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: db007
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
